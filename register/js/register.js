@@ -65,7 +65,7 @@ $(document).ready(function() {
     } else {
       rcode = firstcode;
     }
-    console.log(rcode);
+    
     var occupation = $('#occupation').val();
     var bankname = $('#bankname').val();
     var conpassword = $('#conpassword').val();
@@ -96,7 +96,7 @@ $(document).ready(function() {
                    title: "Payment Method",
                    text: responseMsg,
                    icon: "info",
-                   buttons: ["Bank Transfer", "Online Payment"]
+                   buttons: ["Pay at Login", "Pay Now"]
                  })
                  .then(function(willPay) {
                    if (willPay) {
@@ -106,7 +106,7 @@ $(document).ready(function() {
                      $('#registerBtn').attr('Submit');
                      $('#registerBtn').attr('disabled', false);
                      $('#registerBtn').attr('value', "Submit");
-                     swal("Mobile Transfer", "Transfer the sum of #5000 to the GTB Account 0162695800 using the bank account you registered with. Your account will be activate once we confirm payment", "info");
+                     swal("Please Note", "Your account will not be activated until you make payment. Visit https://nairastash.com/pages/login to pay at login", "info");
                    }
                  });
              } else {
@@ -130,9 +130,9 @@ $(document).ready(function() {
     });
 
     var handler = PaystackPop.setup({
-        key: 'pk_test_b709d99c725f4cb1b4c48714e229da96b4049d7b',
+        key: 'pk_live_c681b5e7255499bb4e656973403e9d72bcc2dcee',
         email: mememail,
-        amount: 500000,
+        amount: 200000,
         ref: 'PE_REG_FEE' + Math.floor((Math.random() * 1000000000) + 1),
         callback: function(response) {
             /* swal("Please wait while we get response from paystack", {
@@ -161,14 +161,14 @@ $(document).ready(function() {
                         xhr.open("GET", apidomain+"/logpayment/?mememail=" + mememail + "&refcode=" + response.reference);
                         xhr.send(data);
                     } else {
-                      swal("Payment completed!", "Your account will be activated within 24 hours.", "success");
+                      swal("Payment completed!", "Your account will be activated within 24 hours. We'll notify you when your account is active. Thanks", "success");
                     }
                 }
             });
 
             xhr.open("GET", "https://api.paystack.co/transaction/verify/" + response.reference);
             xhr.setRequestHeader("authorization",
-                "Bearer sk_test_2eaaaa729732c9010c8105a5cbacf7800041a3a7");
+                "Bearer sk_live_ca522dfef89254637cb49578d01425d4433bca62");
             xhr.send();
         },
         onClose: function() {

@@ -42,9 +42,9 @@ $(document).ready(function() {
              if(responseMsg == "Your account is not activated yet") {
                swal({
                    title: "Unable to login",
-                   text: "Your account is not activated yet. Please make payment using any of the options below",
+                   text: "Your account is not activated yet. Please make payment to activate your account",
                    icon: "warning",
-                   buttons: ["Bank Transfer", "Online Payment"]
+                   buttons: ["Cancel", "Pay Now"]
                  })
                  .then(function(willPay) {
                    if (willPay) {
@@ -54,7 +54,7 @@ $(document).ready(function() {
                      $('#registerBtn').attr('Submit');
                      $('#registerBtn').attr('disabled', false);
                      $('#registerBtn').attr('value', "Submit");
-                     swal("Mobile Transfer", "Transfer the sum of #5000 to the GTB Account 0162695800. Your account will be activate once we confirm payment", "info");
+                     swal("Please Note", "You will not be able to access your account until you make payment.", "info");
                    }
                  });
              } else {
@@ -130,9 +130,9 @@ $(document).ready(function() {
     });
 
     var handler = PaystackPop.setup({
-        key: 'pk_test_b709d99c725f4cb1b4c48714e229da96b4049d7b',
+        key: 'pk_live_c681b5e7255499bb4e656973403e9d72bcc2dcee',
         email: mememail,
-        amount: 500000,
+        amount: 200000,
         ref: 'PE_REG_FEE' + Math.floor((Math.random() * 1000000000) + 1),
         callback: function(response) {
             /* swal("Please wait while we get response from paystack", {
@@ -169,7 +169,7 @@ $(document).ready(function() {
 
             xhr.open("GET", "https://api.paystack.co/transaction/verify/" + response.reference);
             xhr.setRequestHeader("authorization",
-                "Bearer sk_test_2eaaaa729732c9010c8105a5cbacf7800041a3a7");
+                "Bearer sk_live_ca522dfef89254637cb49578d01425d4433bca62");
             xhr.send();
         },
         onClose: function() {
@@ -191,7 +191,7 @@ $(document).ready(function() {
     .then(function(name) {
       if (!name) throw null;
 
-      return fetch(`http://localhost/refmoney/api/passwordreset/?prlemail=${name}&actiontype=sendlink`);
+      return fetch(`https://nairastash.com/api/passwordreset/?prlemail=${name}&actiontype=sendlink`);
     })
     .then(function(results) {
       return results.json();
