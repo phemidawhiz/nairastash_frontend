@@ -1,0 +1,39 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets"
+   xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.hsatsarian" version = "1.0">
+
+   <name>Naira Stash </name>
+
+   <description>
+      Naira Stash Mobile App
+   </description>
+
+   <author href = "http://femitechinn.com" email = "feminiscence@gmail.com">
+      Ayodele Olufemi Segun
+   </author>
+
+   <preference name = "permissions" value = "none"/>
+
+   <icon src = "images/android/mipmap-ldpi/ic_launcher.png"
+      gap:platform = "android" gap:qualifier = "ldpi" />
+
+   <icon src = "images/android/mipmap-mdpi/ic_launcher.png"
+      gap:platform = "android" gap:qualifier = "mdpi" />
+
+   <icon src = "images/android/mipmap-hdpi/ic_launcher.png"
+      gap:platform = "android" gap:qualifier = "hdpi" />
+
+   <icon src = "images/android/mipmap-xhdpi/ic_launcher.png"
+      gap:platform = "android" gap:qualifier = "xhdpi" />
+
+   <icon src = "images/android/mipmap-xxhdpi/ic_launcher.png"
+      gap:platform = "android" gap:qualifier = "xxhdpi" />
+
+   <icon src = "images/ios/icons/ic_launcher.png" gap:platform = "ios" gap:qualifier = ""/>
+   <icon src = "images/ios/icons/icon57.png" gap:platform = "ios" width = "57" height = "57" />
+   <icon src = "images/ios/icons/icon72.png" gap:platform = "ios" width = "72" height = "72" />
+   <icon src = "images/ios/icons/icon57_2.png" gap:platform = "ios" width = "114" height = "114" />
+   <icon src = "images/ios/icons/icon72_2.png" gap:platform = "ios" width = "144" height = "144" />
+
+</widget>
