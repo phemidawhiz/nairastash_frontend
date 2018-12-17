@@ -130,7 +130,7 @@ $(document).ready(function() {
     });
 
     var handler = PaystackPop.setup({
-        key: 'pk_live_c681b5e7255499bb4e656973403e9d72bcc2dcee',
+        key: 'Some Live Key',
         email: mememail,
         amount: 200000,
         ref: 'PE_REG_FEE' + Math.floor((Math.random() * 1000000000) + 1),
@@ -168,7 +168,7 @@ $(document).ready(function() {
 
             xhr.open("GET", "https://api.paystack.co/transaction/verify/" + response.reference);
             xhr.setRequestHeader("authorization",
-                "Bearer sk_live_ca522dfef89254637cb49578d01425d4433bca62");
+                "some bearer key");
             xhr.send();
         },
         onClose: function() {
