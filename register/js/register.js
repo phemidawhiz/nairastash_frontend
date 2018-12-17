@@ -130,7 +130,7 @@ $(document).ready(function() {
     });
 
     var handler = PaystackPop.setup({
-        key: 'pk_test_b709d99c725f4cb1b4c48714e229da96b4049d7b',
+        key: 'some key',
         email: mememail,
         amount: 500000,
         ref: 'PE_REG_FEE' + Math.floor((Math.random() * 1000000000) + 1),
@@ -168,7 +168,7 @@ $(document).ready(function() {
 
             xhr.open("GET", "https://api.paystack.co/transaction/verify/" + response.reference);
             xhr.setRequestHeader("authorization",
-                "Bearer sk_test_2eaaaa729732c9010c8105a5cbacf7800041a3a7");
+                "Some Bearer Key");
             xhr.send();
         },
         onClose: function() {
